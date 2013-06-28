@@ -27,8 +27,8 @@ class Yacuushien extends ActivationEngineTask {
 
         $this->init();
 
-        $this->output = '';
-        /* main content */
+        $this->output = 'This will be the map!';
+        /* main content 
         $this->output .= '<div class="tasks row-fixed">';
         $this->output .= '<div class="span5" style="font-family: verdana;font-size: 14px;padding-top:10px;">';
         $this->output .= '{%from%}: {%game_author%}<br>';
@@ -39,6 +39,7 @@ class Yacuushien extends ActivationEngineTask {
         $this->output .= '<br><br>';
         $this->output .= $this->donebtn;
         $this->output .= '</div></div>';
+        */
         return $this->output;
     }
 
