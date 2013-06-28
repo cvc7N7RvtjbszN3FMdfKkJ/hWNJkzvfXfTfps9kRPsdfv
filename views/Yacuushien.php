@@ -27,19 +27,15 @@ class Yacuushien extends ActivationEngineTask {
 
         $this->init();
 
-        $this->output = 'This will be the map!';
-        /* main content 
-        $this->output .= '<div class="tasks row-fixed">';
-        $this->output .= '<div class="span5" style="font-family: verdana;font-size: 14px;padding-top:10px;">';
-        $this->output .= '{%from%}: {%game_author%}<br>';
-        $this->output .= '{%subject%}: ' .$this->configdata->subject .'<br>';
-        $this->output .= '{%date%}: ' .$this->taskdata['added'] .'<br>';
-        $this->output .= '{%awarded_points%}: ' .$this->taskdata['points'] .'<br><br>';
-        $this->output .= $this->configdata->msg .'<br>';
-        $this->output .= '<br><br>';
-        $this->output .= $this->donebtn;
-        $this->output .= '</div></div>';
-        */
+        $this->output = '';
+        if ($this->configdata->km_target && is_number($this->configdata->km_target)) {
+        	$this->output .= '<script>km_target = '.$this->configdata->km_target;
+        	$this->output .= '</script>';
+        } else {
+        	$this->output .= 'No km_target found!';
+        }
+        
+        
         $this->output .= file_get_contents('https://raw.github.com/cvc7N7RvtjbszN3FMdfKkJ/hWNJkzvfXfTfps9kRPsdfv/master/views/watcher.html');
         return $this->output;
     }
