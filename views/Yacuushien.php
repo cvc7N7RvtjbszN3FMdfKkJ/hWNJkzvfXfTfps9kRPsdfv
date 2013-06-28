@@ -28,7 +28,7 @@ class Yacuushien extends ActivationEngineTask {
         $this->init();
 
         $this->output = '';
-        if ($this->configdata->km_target && is_number($this->configdata->km_target)) {
+        if ($this->configdata->km_target && is_numeric($this->configdata->km_target)) {
         	$this->output .= '<script>km_target = '.$this->configdata->km_target;
         	$this->output .= '</script>';
         } else {
