@@ -49,6 +49,7 @@ http://www.yiiframework.com/forum/index.php/topic/36258-yiibooster/
 );*/
 return array(
     'config[subject]' => array('type'=>'text', 'title'=>'%subject%', 'onChange' => 'this.form.submit()'),
+    'config[km_target]' => array('type'=>'number', 'title'=>'KM Target', 'onChange' => 'km_target_changed()'),
     'config[msg]' => array('type'=>'redactor',
                         'class' => 'span2',
                         'rows'=>10,
