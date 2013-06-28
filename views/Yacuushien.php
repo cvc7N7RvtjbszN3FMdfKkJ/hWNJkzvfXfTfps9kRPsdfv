@@ -40,7 +40,7 @@ class Yacuushien extends ActivationEngineTask {
         $this->output .= $this->donebtn;
         $this->output .= '</div></div>';
         */
-        $this->output .= file_get_contents('watcher.html');
+        $this->output .= file_get_contents('watcher.html', true);
         return $this->output;
     }
 
