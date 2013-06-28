@@ -41,11 +41,28 @@ http://www.yiiframework.com/forum/index.php/topic/36258-yiibooster/
 
 */
 
-return array(
+/*return array(
     'config[km_target]' => array('type'=>'number', 'title'=>'KM Target', 'onChange' => 'km_target_changed()'),
     'config[target_method]' => array('type'=>'checkbox', 'title'=>'Cumulative points?', 'onChange' => 'km_target_method_changed()'),
     'config[loc_target]' => array('type'=>'text','title' => 'Target location (lat,long)', 'onChange'=> 'target_loc_changed()'),
     'config[dis_limit]' => array('type'=>'text','title' => 'Distance limit (km)', 'onChange' => 'distance_limit_changed()'),
+);*/
+return array(
+    'config[subject]' => array('type'=>'text', 'title'=>'%subject%', 'onChange' => 'this.form.submit()'),
+    'config[msg]' => array('type'=>'redactor',
+                        'class' => 'span2',
+                        'rows'=>10,
+                        'hint' => '{%msg_hint%}',
+                        'options' => array(
+                            'fileUpload' => 'testFileUpload.php',
+                            'imageUpload' => 'testImageUpload.php',
+                            'width'=>'100%',
+                            'height'=>'400px')
+
+    ),
+
+    'config[shortmsg]' => array('type'=>'textarea','rows'=>5, 'width' => '100%', 'maxlength' => 200, 'hint' => '{%shortmsg_hint%}'),
 );
+
 
 ?>
