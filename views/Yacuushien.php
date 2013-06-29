@@ -31,13 +31,11 @@ class Yacuushien extends ActivationEngineTask {
         if ($this->configdata->km_target && is_numeric($this->configdata->km_target)) {
         	$this->output .= '<script>km_target = '.$this->configdata->km_target;
         	$this->output .= '</script>';
-        	console.log("route length mode ");
         } else {
         	$this->output .= '<script>lat_target = '.$this->configdata->lat_target.";";
         	$this->output .= 'lon_target = '.$this->configdata->lon_target.";";
         	$this->output .= 'rmax = '.$this->configdata->dis_limit.";";
         	$this->output .= '</script>';
-        	console.log("location mode");
         }
         
 	$this->output .= "<script>doneurl = \"" . $this->doneurl . "\"</script>";
