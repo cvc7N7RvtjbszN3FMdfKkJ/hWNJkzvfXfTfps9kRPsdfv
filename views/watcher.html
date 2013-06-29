@@ -41,7 +41,7 @@ console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong 
 route.push(x);
 updateMapRoute();
 var dp = "Estimated kilometres travelled so far " + getPathLength();
-if (km_target) {
+if (typeof km_target != 'undefined') {
    var pl = getPathLength();
    dp += ", which is " + (pl/km_target)*100 + "% of your target!";
    
