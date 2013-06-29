@@ -1,11 +1,12 @@
 
+
 <div id="map" style="width:320px; height:350px"></div>
 <div id="dp"></div>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <input type="button" onClick="moveSomewhere()" value="Move Somewhere"/>
 <input type="button" onClick="moveToTarget()" value="Move to Target"/>
-<input type="button" onClick="moveFarAway()" value="Move far away"/>
+<input type="button" onClick="moveFarAway()" value="Move to Marrakesh"/>
 <script>
 initMap();
 var lastlong, lastlati, route;
@@ -133,8 +134,8 @@ sp.coords = new Object();
 var last = route[route.length-1];
 if (last) {
 
-sp.coords.latitude = last.coords.latitude + Math.random()*90 + Math.cos( Math.PI * Math.random() )/1000;
-sp.coords.longitude = last.coords.longitude + Math.random()*180 + Math.cos( Math.PI * Math.random()  )/1000;
+sp.coords.latitude = 31.6353;
+sp.coords.longitude = 8.0003;
 
 position(sp);
 } else {
