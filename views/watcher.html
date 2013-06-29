@@ -77,7 +77,7 @@ function updateMapRoute() {
 var path = poly.getPath();
 var last = route[route.length-1];
 gpos = new google.maps.LatLng(last.coords.latitude, last.coords.longitude);
-marker.position = gpos;
+map.setCenter(gpos);
 path.push(gpos);
 }
 
