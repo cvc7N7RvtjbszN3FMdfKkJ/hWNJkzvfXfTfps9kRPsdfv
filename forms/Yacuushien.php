@@ -44,7 +44,8 @@ http://www.yiiframework.com/forum/index.php/topic/36258-yiibooster/
 return array(
     'config[km_target]' => array('type'=>'number', 'title'=>'KM Target', 'onChange' => 'km_target_changed()'),
     'config[target_method]' => array('type'=>'checkbox', 'title'=>'Cumulative points?', 'onChange' => 'km_target_method_changed()'),
-    'config[loc_target]' => array('type'=>'text','title' => 'Target location (lat,long)', 'onChange'=> 'target_loc_changed()'),
+    'config[lat_target]' => array('type'=>'text','title' => 'Target location (latitude)', 'onChange'=> 'target_loc_changed()'),
+    'config[lon_target]' => array('type'=>'text','title' => 'Target location (longitude)', 'onChange'=> 'target_loc_changed()'),
     'config[dis_limit]' => array('type'=>'text','title' => 'Distance limit (km)', 'onChange' => 'distance_limit_changed()'),
 );
 /*return array(

@@ -49,6 +49,19 @@ if (km_target) {
    if (pl >= km_target) {
    	window.location.href = doneurl;
    }
+} else if (loc_target) {
+   var r = getDistanceFromStart();
+   var rTpos =new google.maps.LatLng(lat_target,lon_target);
+   var rT = getDistance(route[route.lenght-1], rTpos);
+   if (r > rmax) {
+   	console.log("Out of R!");
+   } else {
+   	if (rT < 0.5) {
+   	   window.location.href = doneurl;
+   	} else {
+   	   console.log("Distance to target  " + rT);
+   	}
+   }
 }
 document.getElementById('dp').innerHTML = dp ;
 
@@ -111,5 +124,28 @@ d = d + 6371 * (Math.asin(Math.sqrt(a))*2);
 }
 return d;
 }
+
+function getDistanceFromStart() {
+var d = 0;
+
+var a = route[0];
+var b = route[route.length-1];
+
+return getDistance(a, b);
+}
+
+function getDistance(a, b) {
+var d = 0;
+
+var dLat = (b.coords.latitude - a.coords.latitude) * Math.PI/180;
+var dLon = (b.coords.longitude - a.coords.longitude) * Math.PI/180;
+var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(a.coords.latitude*Math.PI/180) * Math.cos(b.coords.latitude*Math.PI/180) * Math.sin(dLon/2) * Math.sin(dLon/2);
+
+d = d + 6371 * (Math.asin(Math.sqrt(a))*2);
+
+return d;
+}
+
+
 </script>
 
