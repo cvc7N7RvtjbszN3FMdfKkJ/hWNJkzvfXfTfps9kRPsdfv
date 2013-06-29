@@ -49,7 +49,7 @@ if (typeof km_target != 'undefined') {
    if (pl >= km_target) {
    	window.location.href = doneurl;
    }
-} else if (loc_target) {
+} else if (typeof lat_target != 'undefine' && typeof lon_target != 'undefined') {
    var r = getDistanceFromStart();
    var rTpos =new google.maps.LatLng(lat_target,lon_target);
    var rT = getDistance(route[route.lenght-1], rTpos);
