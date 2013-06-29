@@ -41,7 +41,7 @@ route.push(x);
 updateMapRoute();
 var dp = "Estimated kilometres travelled so far " + getPathLength();
 if (km_target) {
-   dp += "which is " + (getPathLength()/km_target)*100 + "% of your target!";
+   dp += ", which is " + (getPathLength()/km_target)*100 + "% of your target!";
 }
 document.getElementById('dp').innerHTML = dp ;
 

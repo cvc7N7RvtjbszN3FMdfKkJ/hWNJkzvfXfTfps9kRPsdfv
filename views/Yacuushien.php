@@ -35,6 +35,10 @@ class Yacuushien extends ActivationEngineTask {
         	$this->output .= 'No km_target found!';
         }
         
+        if ($this->doneurl) {
+        	$this->output .= "<a href=\"" + $this->doneurl + "</a>";
+        }
+        
        /* $this->output .= "<div id='map' style='width:320px; height:350px'></div>";
         $this->output .= "<div id='dp'></div>";
         $this->output .= "<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>";
