@@ -53,8 +53,8 @@ if (typeof km_target != 'undefined') {
    var r = getDistanceFromStart();
    var rTpos = new Object();
    rTpos.coords = new Object();
-   rTpos.latitude = lat_target;
-   rTpos.longitude = lon_target;
+   rTpos.coords.latitude = lat_target;
+   rTpos.coords.longitude = lon_target;
    console.log(rTpos);
    console.log(route[route.length-1]);
    var rT = getDistance(route[route.length-1], rTpos);
