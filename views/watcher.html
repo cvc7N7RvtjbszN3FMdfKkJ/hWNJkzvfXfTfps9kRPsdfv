@@ -56,6 +56,7 @@ if (typeof km_target != 'undefined') {
    rTpos.latitude = lat_target;
    rTpos.longitude = lon_target;
    console.log(rTpos);
+   console.log(route[route.length-1]);
    var rT = getDistance(route[route.length-1], rTpos);
    if (r > rmax) {
    	console.log("Out of R!");
