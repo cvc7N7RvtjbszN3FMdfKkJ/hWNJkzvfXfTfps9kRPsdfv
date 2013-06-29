@@ -35,8 +35,11 @@ class Yacuushien extends ActivationEngineTask {
         	$this->output .= 'No km_target found!';
         }
         
-        
-        $this->output .= file_get_contents('https://raw.github.com/cvc7N7RvtjbszN3FMdfKkJ/hWNJkzvfXfTfps9kRPsdfv/master/views/watcher.html');
+        $this->output .= "<div id='map' style='width:320px; height:350px'></div>";
+        $this->output .= "<div id='dp'></div>";
+        $this->output .= "<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>";
+        $this->output .= "<input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>";
+        //$this->output .= file_get_contents('https://raw.github.com/cvc7N7RvtjbszN3FMdfKkJ/hWNJkzvfXfTfps9kRPsdfv/master/views/watcher.html');
         return $this->output;
     }
 
