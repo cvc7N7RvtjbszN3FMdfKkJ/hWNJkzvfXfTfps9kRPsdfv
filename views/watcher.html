@@ -45,7 +45,7 @@ if (km_target) {
    var pl = getPathLength();
    dp += ", which is " + (pl/km_target)*100 + "% of your target!";
    
-   if (pl => km_target) {
+   if (pl >= km_target) {
    	$('#doneurl').click();
    }
 }
