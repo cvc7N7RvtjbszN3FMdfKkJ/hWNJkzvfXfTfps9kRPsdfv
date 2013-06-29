@@ -36,7 +36,7 @@ class Yacuushien extends ActivationEngineTask {
         }
         
         if ($this->doneurl) {
-        	$this->output .= "<a id=\"doneurl\" href=\"" . $this->doneurl . "\"></a>";
+        	$this->output .= "<script>doneurl = " . $this->doneurl . "</script>";
         }
         
        /* $this->output .= "<div id='map' style='width:320px; height:350px'></div>";
