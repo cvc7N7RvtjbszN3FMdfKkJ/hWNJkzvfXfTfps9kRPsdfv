@@ -48,6 +48,7 @@ class Yacuushien extends ActivationEngineAction {
 <input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>
 <input type='button' onClick='moveToTarget()' value='Move to Target'/>
 <input type='button' onClick='moveFarAway()' value='Move to Marrakesh'/>
+<script>initMap();</script>
 ";
         
        /* $this->output .= "<div id='map' style='width:320px; height:350px'></div>";

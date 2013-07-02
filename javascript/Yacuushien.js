@@ -1,4 +1,4 @@
-initMap();
+
 var lastlong, lastlati, route;
 route = [];
 navigator.geolocation.watchPosition(position, error, {enableHighAccuracy:true});
