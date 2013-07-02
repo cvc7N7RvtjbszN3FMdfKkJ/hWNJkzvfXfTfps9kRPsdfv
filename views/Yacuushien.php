@@ -20,7 +20,7 @@
 
 */
 
-class Yacuushien extends ActivationEngineTask {
+class Yacuushien extends ActivationEngineAction {
 
 
     public function render(){
@@ -44,8 +44,14 @@ class Yacuushien extends ActivationEngineTask {
         $this->output .= "<div id='dp'></div>";
         $this->output .= "<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>";
         $this->output .= "<input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>";*/
-        $this->output .= file_get_contents('https://raw.github.com/cvc7N7RvtjbszN3FMdfKkJ/hWNJkzvfXfTfps9kRPsdfv/master/views/watcher.html');
+        
+        $this->output .= file_get_contents('watcher.html');
         return $this->output;
+    }
+    
+    public function init() {
+    	$path = Yii::getPathOfAlias('aelogic.packages.actionYacuushien.views');
+    	set_include_path(get_include_path() . PATH_SEPARATOR . $path);	    
     }
 
 }
