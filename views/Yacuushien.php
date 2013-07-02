@@ -45,7 +45,7 @@ class Yacuushien extends ActivationEngineAction {
         $this->output .= "<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>";
         $this->output .= "<input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>";*/
         
-        $this->output .= file_get_contents('watcher.html');
+        $this->output .= file_get_contents('watcher.html', true);
         return $this->output;
     }
     
