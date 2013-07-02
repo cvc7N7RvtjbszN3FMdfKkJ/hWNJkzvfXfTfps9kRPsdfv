@@ -39,20 +39,31 @@ class Yacuushien extends ActivationEngineAction {
         }
         
 	$this->output .= "<script>doneurl = \"" . $this->doneurl . "\"</script>";
+	
+	$p = "
+<div id='map' style='width:320px; height:350px'></div>
+<div id='dp'></div>
+<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
+<input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>
+<input type='button' onClick='moveToTarget()' value='Move to Target'/>
+<input type='button' onClick='moveFarAway()' value='Move to Marrakesh'/>
+";
         
        /* $this->output .= "<div id='map' style='width:320px; height:350px'></div>";
         $this->output .= "<div id='dp'></div>";
         $this->output .= "<script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>";
         $this->output .= "<input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>";*/
         
-        $this->output .= file_get_contents('watcher.html', true);
+        //$this->output .= file_get_contents('watcher.html', true);
+        $this->output .= $p;
         return $this->output;
     }
     
-    public function init() {
+  /*  public function init() {
     	$path = Yii::getPathOfAlias('aelogic.packages.actionYacuushien.views');
     	set_include_path(get_include_path() . PATH_SEPARATOR . $path);	    
-    }
+    }*/
 
 }
 
