@@ -1,7 +1,6 @@
 
 var lastlong, lastlati, route;
 route = [];
-navigator.geolocation.watchPosition(position, error, {enableHighAccuracy:true});
 
 function position(x) {
 if (!lastlati || !lastlong) {
@@ -23,7 +22,7 @@ var pos=new google.maps.LatLng(x.coords.latitude,x.coords.longitude);
     strokeColor: '#000000',
     strokeOpacity: 1.0,
     strokeWeight: 3
-  }
+  };
   poly = new google.maps.Polyline(polyOptions);
   poly.setMap(map);
 }
@@ -84,6 +83,8 @@ var myOptions = {
 	      mapTypeId: google.maps.MapTypeId.ROADMAP      
 	    }	
  map = new google.maps.Map(document.getElementById("map"), myOptions);
+ navigator.geolocation.watchPosition(position, error, {enableHighAccuracy:true});
+
 }
 
 function updateMapRoute() {
