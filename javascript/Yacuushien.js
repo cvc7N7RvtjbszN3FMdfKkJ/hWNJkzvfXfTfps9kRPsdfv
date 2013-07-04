@@ -40,7 +40,7 @@ if (typeof km_target != 'undefined') {
    console.log(pl >= km_target);
    if (pl >= km_target) {
    	//window.location.href = doneurl;
-   	document.getElementById('dp').disabled = false;
+   	document.getElementById('donebtn').disabled = false;
    }
 } else if (typeof lat_target != 'undefine' && typeof lon_target != 'undefined') {
    var r = getDistanceFromStart();
@@ -57,7 +57,7 @@ if (typeof km_target != 'undefined') {
    } else {
    	if (rT < 0.5) {
    	   //window.location.href = doneurl;
-   	   document.getElementById('dp').disabled = false;
+   	   document.getElementById('donebtn').disabled = false;
    	} else {
    	   dp += ", and you are about " + rT + "km from the target";
    	   console.log("Distance to target  " + rT);
