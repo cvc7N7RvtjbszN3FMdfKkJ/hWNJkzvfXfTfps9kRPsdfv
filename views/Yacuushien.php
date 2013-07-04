@@ -49,6 +49,7 @@ class Yacuushien extends ActivationEngineAction {
 <input type='button' onClick='moveSomewhere()' value='Move Somewhere'/>
 <input type='button' onClick='moveToTarget()' value='Move to Target'/>
 <input type='button' onClick='moveFarAway()' value='Move to Marrakesh'/>
+<input id="donebtn" type='button' onClick='done()' value='Done' disabled/>
 <script>initMap();</script>
 HTML;
         
