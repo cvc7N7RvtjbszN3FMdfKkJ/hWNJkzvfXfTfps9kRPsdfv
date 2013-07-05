@@ -1,6 +1,13 @@
 
 var lastlong, lastlati, route;
+
 route = [];
+if (if(typeof(Storage)!=="undefined")) {
+var pR = sessionStorage.getItem(taskid);
+if (pR != null) {
+	route = pR;
+}
+}
 
 function position(x) {
 if (!lastlati || !lastlong) {
@@ -31,6 +38,10 @@ if (x.coords.latitude != lastlati || x.coords.longitude != lastlong) {
 console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong - x.coords.longitude));
 
 route.push(x);
+if (if(typeof(Storage)!=="undefined")) {
+	sessionStorage.setItem(taskid, route);
+}
+
 updateMapRoute();
 var dp = "Estimated kilometres travelled so far " + getPathLength();
 if (typeof km_target != 'undefined') {
