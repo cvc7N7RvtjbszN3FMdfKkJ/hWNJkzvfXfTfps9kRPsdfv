@@ -2,7 +2,7 @@
 var lastlong, lastlati, route;
 
 route = [];
-if (if(typeof(Storage)!=="undefined")) {
+if (typeof(Storage)!=="undefined") {
 var pR = sessionStorage.getItem(taskid);
 if (pR != null) {
 	route = pR;
