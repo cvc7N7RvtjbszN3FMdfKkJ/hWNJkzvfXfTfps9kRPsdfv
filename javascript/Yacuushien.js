@@ -97,11 +97,10 @@ var myOptions = {
  
 if (typeof(Storage)!=="undefined") {
 var pR = sessionStorage.getItem(taskid);
-
+pR = JSON.parse(pR);
 if (pR != null) {
-	console.log("Recovering route " + pR);
 	for (var i=0;i<pR.length-1; i++) {
-		position(JSON.parse(pR[i]));
+		position(pR[i]);
 	}
 }
 }
