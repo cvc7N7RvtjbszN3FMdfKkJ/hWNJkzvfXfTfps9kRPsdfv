@@ -40,6 +40,7 @@ class Yacuushien extends ActivationEngineAction {
         }
         
 	$this->output .= "<script>doneurl = \"" . $this->doneurl . "\"</script>";
+	$this->output .= "<script>taskid = \"" . $this->taskid . "\"</script>";
 	
 	$p = <<<HTML
 <div id='map' style='width:320px; height:350px'></div>
