@@ -43,7 +43,7 @@ class Yacuushien extends ActivationEngineAction {
 	$this->output .= "<script>taskid = \"" . $this->taskid . "\"</script>";
 	
 	$p = <<<HTML
-<div id='map' style='width:320px; height:350px'></div>
+<div id='map' style='width:100%; height:350px'></div>
 <div id='dp'></div>
 <script type='text/javascript' src='http://maps.google.com/maps/api/js?sensor=false'></script>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
