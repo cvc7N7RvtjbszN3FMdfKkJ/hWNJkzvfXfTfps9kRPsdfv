@@ -92,14 +92,19 @@ var myOptions = {
 	      mapTypeId: google.maps.MapTypeId.ROADMAP      
 	    }	
  map = new google.maps.Map(document.getElementById("map"), myOptions);
- navigator.geolocation.watchPosition(position, error, {enableHighAccuracy:true});
+ 
 if (typeof(Storage)!=="undefined") {
 var pR = sessionStorage.getItem(taskid);
 if (pR != null) {
-	console.log(pR);
-	route = pR;
+	console.log("Recovering route " + pR);
+	for (var i=0;i<pR.length-1; i++) {
+		position(pR);
+	}
+	//route = pR;
 }
 }
+
+navigator.geolocation.watchPosition(position, error, {enableHighAccuracy:true});
 }
 
 function updateMapRoute() {
