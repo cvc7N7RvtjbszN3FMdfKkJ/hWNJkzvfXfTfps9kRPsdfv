@@ -98,7 +98,7 @@ var pR = sessionStorage.getItem(taskid);
 if (pR != null) {
 	console.log("Recovering route ");
 	for (var i=0;i<pR.length-1; i++) {
-		console.log(JSON.parse(pR[i]));
+		console.log(pR[i]);
 		position(JSON.parse(pR[i]));
 	}
 	//route = pR;
