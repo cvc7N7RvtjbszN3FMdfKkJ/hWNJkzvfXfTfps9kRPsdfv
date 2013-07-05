@@ -33,7 +33,9 @@ console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong 
 
 route.push(x);
 if (typeof(Storage)!=="undefined") {
-	sessionStorage.setItem(taskid, JSON.stringify(route));
+	var r = JSON.stringify(route);
+	console.log("Storing route as " + r);
+	sessionStorage.setItem(taskid, r);
 }
 
 updateMapRoute();
