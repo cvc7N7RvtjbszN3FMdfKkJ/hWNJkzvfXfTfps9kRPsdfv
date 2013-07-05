@@ -38,7 +38,7 @@ if (x.coords.latitude != lastlati || x.coords.longitude != lastlong) {
 console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong - x.coords.longitude));
 
 route.push(x);
-if (if(typeof(Storage)!=="undefined")) {
+if (typeof(Storage)!=="undefined") {
 	sessionStorage.setItem(taskid, route);
 }
 
