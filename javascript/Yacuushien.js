@@ -34,8 +34,8 @@ console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong 
 route.push(x);
 if (typeof(Storage)!=="undefined") {
 	var r = JSON.stringify(route);
-	console.log("Storing route as " + r);
-	sessionStorage.setItem(taskid, r);
+	//console.log("Storing route as " + r);
+	sessionStorage.setItem(token, r);
 }
 
 updateMapRoute();
@@ -82,6 +82,7 @@ function error(x) {
 console.log(x);
 }
 function done() {
+	sessionStorage.removeItem(token);
 	window.location.href = doneurl;
 }
 function initMap() {
@@ -96,7 +97,7 @@ var myOptions = {
  map = new google.maps.Map(document.getElementById("map"), myOptions);
  
 if (typeof(Storage)!=="undefined") {
-var pR = sessionStorage.getItem(taskid);
+var pR = sessionStorage.getItem(token);
 pR = JSON.parse(pR);
 if (pR != null) {
 	for (var i=0;i<pR.length-1; i++) {
