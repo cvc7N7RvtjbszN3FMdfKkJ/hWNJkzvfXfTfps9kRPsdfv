@@ -2,12 +2,6 @@
 var lastlong, lastlati, route;
 
 route = [];
-if (typeof(Storage)!=="undefined") {
-var pR = sessionStorage.getItem(taskid);
-if (pR != null) {
-	route = pR;
-}
-}
 
 function position(x) {
 if (!lastlati || !lastlong) {
@@ -99,7 +93,12 @@ var myOptions = {
 	    }	
  map = new google.maps.Map(document.getElementById("map"), myOptions);
  navigator.geolocation.watchPosition(position, error, {enableHighAccuracy:true});
-
+if (typeof(Storage)!=="undefined") {
+var pR = sessionStorage.getItem(taskid);
+if (pR != null) {
+	route = pR;
+}
+}
 }
 
 function updateMapRoute() {
