@@ -96,8 +96,9 @@ var myOptions = {
 if (typeof(Storage)!=="undefined") {
 var pR = sessionStorage.getItem(taskid);
 if (pR != null) {
-	console.log("Recovering route " + pR);
+	console.log("Recovering route ");
 	for (var i=0;i<pR.length-1; i++) {
+		console.log(pR);
 		position(pR[i]);
 	}
 	//route = pR;
