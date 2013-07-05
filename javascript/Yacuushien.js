@@ -100,7 +100,7 @@ if (typeof(Storage)!=="undefined") {
 var pR = sessionStorage.getItem(token);
 pR = JSON.parse(pR);
 if (pR != null) {
-	for (var i=0;i<pR.length-1; i++) {
+	for (var i=0;i<pR.length; i++) {
 		position(pR[i]);
 	}
 }
