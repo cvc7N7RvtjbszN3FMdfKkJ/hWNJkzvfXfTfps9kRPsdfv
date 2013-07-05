@@ -33,7 +33,7 @@ console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong 
 
 route.push(x);
 if (typeof(Storage)!=="undefined") {
-	sessionStorage.setItem(taskid, route);
+	sessionStorage.setItem(taskid, JSON.stringify(route));
 }
 
 updateMapRoute();
@@ -98,8 +98,8 @@ var pR = sessionStorage.getItem(taskid);
 if (pR != null) {
 	console.log("Recovering route ");
 	for (var i=0;i<pR.length-1; i++) {
-		console.log(pR);
-		position(pR[i]);
+		console.log(JSON.parse(pR[i]));
+		position(JSON.parse(pR[i]));
 	}
 	//route = pR;
 }
