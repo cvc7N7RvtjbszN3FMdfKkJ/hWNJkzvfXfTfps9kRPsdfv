@@ -96,6 +96,7 @@ var myOptions = {
 if (typeof(Storage)!=="undefined") {
 var pR = sessionStorage.getItem(taskid);
 if (pR != null) {
+	console.log(pR);
 	route = pR;
 }
 }
