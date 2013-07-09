@@ -39,10 +39,10 @@ if (typeof(Storage)!=="undefined") {
 }
 
 updateMapRoute();
-var dp = "Estimated kilometres travelled so far " + getPathLength();
+var dp = "Estimated kilometres travelled so far " + Math.round(getPathLength()*100)/100;
 if (typeof km_target != 'undefined') {
    var pl = getPathLength();
-   dp += ", which is " + (pl/km_target)*100 + "% of your target!";
+   dp += ", which is " + Math.round((pl/km_target)*100) + "% of your target!";
    
    console.log(pl >= km_target);
    if (pl >= km_target) {
@@ -66,7 +66,7 @@ if (typeof km_target != 'undefined') {
    	   //window.location.href = doneurl;
    	   document.getElementById('donebtn').disabled = false;
    	} else {
-   	   dp += ", and you are about " + rT + "km from the target";
+   	   dp += ", and you are about " + Math.round(rT) + "km from the target";
    	   console.log("Distance to target  " + rT);
    	}
    }
