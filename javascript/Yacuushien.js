@@ -1,7 +1,15 @@
 
-var lastlong, lastlati, route;
+var lastlong, lastlati, route, d_th;
 
 route = [];
+
+function realmove(x) {
+	if (typeof(d_th) == "undefined") return true;
+	// This uses the embedded raw lat/lon treshold to cut out small movement considered as noise
+	if (abs(x.coords.latitude - lastlati) > d_th) return true;
+	if (abs(x.coords.longitude - lastlong) > d_th) return true;
+	return false;
+}
 
 function position(x) {
 if (!lastlati || !lastlong) {
@@ -27,8 +35,8 @@ var pos=new google.maps.LatLng(x.coords.latitude,x.coords.longitude);
   poly = new google.maps.Polyline(polyOptions);
   poly.setMap(map);
 }
-updateMapRoute();
-if (x.coords.latitude != lastlati || x.coords.longitude != lastlong) {
+//updateMapRoute();
+if (realmove(x.coords)) { //x.coords.latitude != lastlati || x.coords.longitude != lastlong) {
 console.log("Moved Lat " + (lastlati - x.coords.latitude) + " Lon " + (lastlong - x.coords.longitude));
 
 route.push(x);

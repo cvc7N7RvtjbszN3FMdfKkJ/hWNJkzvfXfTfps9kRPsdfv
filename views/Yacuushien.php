@@ -22,7 +22,6 @@
 
 class Yacuushien extends ActivationEngineAction {
 
-
     public function render(){
 
         $this->init();
@@ -39,6 +38,9 @@ class Yacuushien extends ActivationEngineAction {
         	$this->output .= '</script>';
         }
         
+        if ($this->configdata->tres_limit && is_numeric($this->configdata->tres_limit)) {
+        	$this->output .= "<script>d_th = \"" . $this->configdata->tres_limit . "\"</script>";
+        }
 	$this->output .= "<script>doneurl = \"" . $this->doneurl . "\"</script>";
 	$this->output .= "<script>taskid = \"" . $this->taskid . "\"</script>";
 	$this->output .= "<script>token = \"" . $this->token . "\"</script>";

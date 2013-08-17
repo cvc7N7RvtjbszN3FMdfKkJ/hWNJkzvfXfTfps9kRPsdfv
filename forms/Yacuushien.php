@@ -47,6 +47,8 @@ return array(
     'config[lat_target]' => array('type'=>'text','title' => 'Target location (latitude)', 'onChange'=> 'target_loc_changed()'),
     'config[lon_target]' => array('type'=>'text','title' => 'Target location (longitude)', 'onChange'=> 'target_loc_changed()'),
     'config[dis_limit]' => array('type'=>'text','title' => 'Distance limit (km)', 'onChange' => 'distance_limit_changed()'),
+    'config[tres_limit]' => array('type'=>'text','title' => 'Movement treshold (decimal degrees)', 'value' => '0.0001','onChange' => 'treshold_limit_changed()'),
+    
     
     'config[subject]' => array('type'=>'text', 'title'=>'%subject%', 'onChange' => 'this.form.submit()'),
     'config[msg]' => array('type'=>'redactor','class' => 'span2', 'rows'=>10, 'hint' => '{%msg_hint%}'),
